@@ -1,3 +1,7 @@
 ### Javascript Password Generator
 
-Randomized Javascript Password Generator made with HTML/CSS and Javascript
+Randomized Javascript Password Generator 
+
+**Technology Used**
+HTML/CSS and Javascript
+
