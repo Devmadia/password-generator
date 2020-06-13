@@ -42,7 +42,7 @@ var generatePassword = function() {
   if (passLength >= 8 && passLength <= 128) {
     var upperCaseQ = window.confirm("Do you wish to include CAPITAL letters?");
     var lowerCaseQ = window.confirm("Do you wish to include LOWER CASE letters?");
-    var availNumsQ = window.confirm("Do you wish to include numerical characters?");
+    var availNumsQ = window.confirm("Do you wish to include NUMERICAL characters?");
     var availSpecsQ = window.confirm("Do you wish to include SPECIAL characters?");
     
     // forces user to pick at least one character type to continue
@@ -51,7 +51,7 @@ var generatePassword = function() {
       window.confirm("WARNING: You must choose at least one character type to continue.");
       upperCaseQ = window.confirm("Do you wish to include CAPITAL letters?");
       lowerCaseQ = window.confirm("Do you wish to include LOWER CASE letters?");
-      availNumsQ = window.confirm("Do you wish to include numerical characters?");
+      availNumsQ = window.confirm("Do you wish to include NUMERICAL characters?");
       availSpecsQ = window.confirm("Do you wish to include SPECIAL characters?");
     }
 
