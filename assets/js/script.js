@@ -40,14 +40,15 @@ var generatePassword = function() {
     passLength = window.prompt("Length MUST be 8 - 128 characters. How many characters do you wish your password to be?")
   }
 
+  // input for password character types
   if (passLength >= 8 && passLength <= 128) {
     var upperCase = window.confirm("Do you wish to include CAPITAL letters?");
     var lowerCase = window.confirm("Do you wish to include LOWER CASE letters?");
     var availNums = window.confirm("Do you wish to include numerical characters?");
     var availSpecs = window.confirm("Do you wish to include SPECIAL characters?");
-
+    // forces user to pick at least one character type to continue
     while (!upperCase && !lowerCase && !availNums && !availSpecs) {
-      window.confirm("WARNING: You MUST choose at least one character type.");
+      window.confirm("WARNING: You must choose at least one character type to continue.");
       upperCase = window.confirm("Do you wish to include CAPITAL letters?");
       lowerCase = window.confirm("Do you wish to include LOWER CASE letters?");
       availNums = window.confirm("Do you wish to include numerical characters?");
@@ -57,7 +58,7 @@ var generatePassword = function() {
 } 
  
  
-  // input for password character types
+  
   // make sure user selects character types
   // loop to include specific variables user requested into password
 
