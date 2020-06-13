@@ -46,8 +46,8 @@ var generatePassword = function() {
     var availNums = window.confirm("Do you wish to include numerical characters?");
     var availSpecs = window.confirm("Do you wish to include SPECIAL characters?");
 
-    if (!upperCase && !lowerCase && !availNums && !availSpecs) {
-      window.prompt("You MUST choose at least one character type.");
+    while (!upperCase && !lowerCase && !availNums && !availSpecs) {
+      window.confirm("WARNING: You MUST choose at least one character type.");
       upperCase = window.confirm("Do you wish to include CAPITAL letters?");
       lowerCase = window.confirm("Do you wish to include LOWER CASE letters?");
       availNums = window.confirm("Do you wish to include numerical characters?");
