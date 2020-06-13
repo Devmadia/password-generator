@@ -22,4 +22,4 @@
 - HTML/CSS 
 - Javascript
 
-![Screenshot of password generator](https://github.com/Devmadia/password-generator/assets/images/JavascriptPassGen.png)
+![Screenshot of password generator](https://devmadia.github.io/password-generator/assets/images/JavascriptPassGen.png)
