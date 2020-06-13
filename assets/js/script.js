@@ -27,12 +27,12 @@ var generatePassword = function() {
   // While
   var passLength = window.prompt("How long do you wish your generated password to be? Please choose a length of 8 - 128 characters.");
   while (isNaN(passLength)) {
-    passLength = window.prompt("ERROR: How long do you wish your generated password to be? Please choose a length of 8 - 128 characters.");
+    passLength = window.prompt("Please choose a password length of 8 - 128 characters.");
   }
 
-  passLength = parseInt(passLength, 10); // input for password length
+  //passLength = parseInt(passLength, 10); // input for password length
 
-  while (passLength < 8 || passLength > 128) {
+  while (passLength < 8 || passLength > 128 || isNaN(passLength)) {
     passLength = window.prompt("Length MUST be 8 - 128 characters. How many characters do you wish your password to be?")
   }
  } 
