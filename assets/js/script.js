@@ -4,9 +4,6 @@ var upperCase = "ABCDEFHGIJKLMNOPQRSTUVWXYZ";
 var lowerCase = "abcdefghijklmnopqrstuvwxyz";
 var availNums = "0123456789";
 var availSpecs = "~!@#$%^&*'`?()_-=+,/[\]{|}<>:;";
-var minPassLength = 8; // sets minimum
-var maxPassLength = 128; // sets maximum
-
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
@@ -15,7 +12,7 @@ var generatePassword = function() {
   // variable defines password label which will generate later on based on following variables if selected by user
   var password = "";
 
-  // Do while loop option
+  // Do-While loop option
   /*var passLength;
   do {
     passLength = window.prompt("How long do you wish your generated password to be? Please choose a length of 8 - 128 characters.");
@@ -27,11 +24,13 @@ var generatePassword = function() {
     return;
   }
   
+  // while passLength is Not-A-Number, user is prompted to pick a value of 8 - 128 
   while (isNaN(passLength)) {
     passLength = window.prompt("Please choose a password length of 8 - 128 characters.");
   }
 
-  passLength = parseInt(passLength, 10); // input for password length
+  // input for password length forced into a number
+  passLength = parseInt(passLength, 10); 
 
   // ensures user enters a password length 
   while (passLength < 8 || passLength > 128 || isNaN(passLength)) {
@@ -47,7 +46,7 @@ var generatePassword = function() {
     
     // forces user to pick at least one character type to continue
     while (!upperCaseQ && !lowerCaseQ && !availNumsQ && !availSpecsQ) {
-      // make sure user selects character types
+      // loop of warning and prompts until at least one character type selected
       window.confirm("WARNING: You must choose at least one character type to continue.");
       upperCaseQ = window.confirm("Do you wish to include CAPITAL letters?");
       lowerCaseQ = window.confirm("Do you wish to include LOWER CASE letters?");
@@ -55,29 +54,29 @@ var generatePassword = function() {
       availSpecsQ = window.confirm("Do you wish to include SPECIAL characters?");
     }
 
-    // loop to include specific variables user requested into password
+    // specific variables user requested into password if confirmation received
     var createPassword = '';
 
     if (upperCaseQ) {
-      createPassword += upperCase;
+      createPassword += upperCase; // if upperCaseQ selected, introduce upperCase characters to createPassword
     }
 
     if (lowerCaseQ) {
-      createPassword += lowerCase;
+      createPassword += lowerCase; // if lowerCase selected, introduce lowerCase characters to createPassword
     }
 
     if (availNumsQ) {
-      createPassword += availNums;
+      createPassword += availNums; // if availNumsQ selected, introduce availNums characters to createPassword
     }
 
     if (availSpecsQ) {
-      createPassword += availSpecs;
+      createPassword += availSpecs; // if availSpecsQ selected, introduce availSpecs characters to createPassword
     }
 
     for (i = 0; i < passLength; i++) {
       password += createPassword[Math.floor(Math.random() * createPassword.length)];
     }
-    debugger;
+    
   } else {
     window.alert("Please enter 8 - 128 for character length.");
     generatePassword();
@@ -85,7 +84,6 @@ var generatePassword = function() {
 
   return password;
 } 
-   
 
 // Write password to the #password input
 function writePassword() {
